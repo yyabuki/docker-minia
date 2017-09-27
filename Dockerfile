@@ -3,7 +3,8 @@ MAINTAINER Yukimitsu Yabuki, yukimitsu.yabuki@gmail.com
 # We modified attached files (Procfile, run and Dockerfile) created by Rayan Chikhi.
 
 ENV PACKAGES wget
-ENV TAR http://gatb-tools.gforge.inria.fr/versions/bin/minia-2.0.2-Linux.tar.gz
+#ENV TAR http://gatb-tools.gforge.inria.fr/versions/bin/minia-2.0.2-Linux.tar.gz
+ENV TAR https://github.com/GATB/minia/releases/download/v2.0.7/minia-v2.0.7-bin-Linux.tar.gz
 ENV DIR /tmp/minia
 
 RUN apt-get update -y && \
@@ -12,7 +13,7 @@ RUN apt-get update -y && \
 
 RUN mkdir ${DIR}
 RUN cd ${DIR} &&\
-    wget ${TAR} -O - | tar xzf - --directory . --strip-components=1 &&\
+    wget --no-check-certificate ${TAR} -O - | tar xzf - --directory . --strip-components=1 &&\
     mv bin/minia /usr/local/bin
 
 ADD Procfile /
