@@ -1,6 +1,6 @@
-FROM debian:wheezy
+FROM ubuntu:16.04
 MAINTAINER Yukimitsu Yabuki, yukimitsu.yabuki@gmail.com
-# We modified an attached file (Procfile) created by Rayan Chikhi.
+# We modified attached files (Procfile, run and Dockerfile) created by Rayan Chikhi.
 
 ENV PACKAGES wget
 ENV TAR http://gatb-tools.gforge.inria.fr/versions/bin/minia-2.0.2-Linux.tar.gz
